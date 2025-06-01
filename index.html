@@ -7,7 +7,7 @@ import init, * as bindings from './hive_simul-68024f09b48a12df.js';
 const canvas = document.getElementById("cv");
 const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
 if (!gl) {
-	alert("WebGL not supported or disabled in your browser");
+	console.log("WebGL not supported or disabled in your browser");
 } else {
 	console.log(gl.getSupportedExtensions())
 }
