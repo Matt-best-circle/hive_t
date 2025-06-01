@@ -11,7 +11,6 @@ const canvas = document.getElementById("cv");
 const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
 if (!gl) {
 	alert("WebGL not supported or disabled in your browser");
-	return false;
 } else {
 	console.log(gl.getSupportedExtensions())
 }
