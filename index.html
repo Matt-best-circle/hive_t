@@ -1,28 +1,18 @@
 <html>
     <head>
-    	
-<script type="module">
-import init, * as bindings from './hive_simul-68024f09b48a12df.js';
+		<script type="module">
+		import init, * as bindings from './hive_simul-a5dd8362b69a75.js';
+		const wasm = await init({ module_or_path: './hive_simul-a5dd8362b69a75_bg.wasm' });
 
-const canvas = document.getElementById("cv");
-const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
-if (!gl) {
-	console.log("WebGL not supported or disabled in your browser");
-} else {
-	console.log(gl.getSupportedExtensions())
-}
 
-const wasm = await init({ module_or_path: './hive_simul-68024f09b48a12df_bg.wasm' });
+		window.wasmBindings = bindings;
 
-window.wasmBindings = bindings;
 
-setTimeout(function() {
-	dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-}, 5000);
+		dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
-</script>
-  	<link rel="modulepreload" href="hive_simul-68024f09b48a12df.js" crossorigin="anonymous" integrity="sha384-kTXsyx1+c6P3fGexV/xVy8rWmInkEXXK9LDzqgqVftH+qPZwe8xJeZIQoLcU3+bb"><link rel="preload" href="hive_simul-68024f09b48a12df_bg.wasm" crossorigin="anonymous" integrity="sha384-R+vkPAgeR0+pSJGHGdhmhW4LUJAnhTAOGMy3r8SVT+EhtbUcKUWf1Jzt07l8cCh4" as="fetch" type="application/wasm"></head>
+		</script>
+  	<link rel="modulepreload" href="hive_simul-a5dd8362b69a75.js" crossorigin="anonymous" integrity="sha384-/gYFg6EBP9U6lseCenlhLoyyDZbkqxPVH+h4cuuJJ8JD6UHZbrJYS62JpTbpgrbC"><link rel="preload" href="hive_simul-a5dd8362b69a75_bg.wasm" crossorigin="anonymous" integrity="sha384-JVqX2HHoLdkLuiMhYGBZNJJ/JqQDKjNiP3IUX58JBgt34HtE6jo1QH+jH/rIQQnl" as="fetch" type="application/wasm"></head>
 	<body style="margin: 0;">
-		<canvas id="cv"> </canvas>
+		<canvas id="cv" style="width:100%; height:100%; display: block;"> </canvas>
 	</body>
 </html>
