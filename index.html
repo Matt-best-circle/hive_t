@@ -15,8 +15,9 @@ if (!gl) {
 	console.log(gl.getSupportedExtensions())
 }
 
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+setTimeout(function() {
+	dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+}, 5000);
 
 </script>
   	<link rel="modulepreload" href="hive_simul-68024f09b48a12df.js" crossorigin="anonymous" integrity="sha384-kTXsyx1+c6P3fGexV/xVy8rWmInkEXXK9LDzqgqVftH+qPZwe8xJeZIQoLcU3+bb"><link rel="preload" href="hive_simul-68024f09b48a12df_bg.wasm" crossorigin="anonymous" integrity="sha384-R+vkPAgeR0+pSJGHGdhmhW4LUJAnhTAOGMy3r8SVT+EhtbUcKUWf1Jzt07l8cCh4" as="fetch" type="application/wasm"></head>
