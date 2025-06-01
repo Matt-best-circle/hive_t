@@ -7,6 +7,14 @@ const wasm = await init({ module_or_path: './hive_simul-68024f09b48a12df_bg.wasm
 
 
 window.wasmBindings = bindings;
+const canvas = document.getElementById("cv");
+const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+if (!gl) {
+	alert("WebGL not supported or disabled in your browser");
+	return false;
+} else {
+	console.log(gl.getSupportedExtensions())
+}
 
 
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
